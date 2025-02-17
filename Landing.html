@@ -4,108 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mental Wellness</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-        .header {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 0;
-            text-align: center;
-        }
-        .navbar {
-            display: flex;
-            justify-content: center;
-            background-color: #4CAF50;
-        }
-        .navbar a {
-            color: white;
-            padding: 14px 20px;
-            text-decoration: none;
-            text-align: center;
-        }
-        .navbar a:hover {
-            background-color: #45a049;
-        }
-        .main-content {
-            flex: 1;
-            display: flex;
-            justify-content: space-between;
-            padding: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .content-left {
-            flex: 1;
-            margin-right: 20px;
-        }
-        .content-right {
-            width: 300px;
-            background-color: white;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .footer {
-            background-color: #4CAF50;
-            padding: 10px 0;
-            display: flex;
-            justify-content: center;
-        }
-        .footer .button {
-            background-color: #8A2BE2;
-            color: white;
-            padding: 10px 20px;
-            margin: 10px;
-            border: none;
-            cursor: pointer;
-            border-radius: 20px;
-        }
-        .footer .button:hover {
-            background-color: #7A1BE1;
-        }
-        .calendar {
-            display: grid;
-            grid-template-columns: repeat(7, 1fr);
-            gap: 5px;
-            margin-top: 10px;
-        }
-        .calendar div {
-            background-color: #e0e0e0;
-            padding: 10px;
-            text-align: center;
-            border-radius: 5px;
-        }
-        .legend {
-            margin-top: 10px;
-            font-size: 0.9em;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
     <div class="header">
-        <h1>Mental Wellness</h1>
-    </div>
-
-    <div class="navbar">
-        <a href="#">Mood Tracker</a>
-        <a href="#">AI Chatbot</a>
-        <a href="#">Resources</a>
-        <a href="#">Book Therapy</a>
-        <a href="#">Profile</a>
+        <div class="logo">
+            <a href="Landing.html">Mental Wellness</a>
+        </div>
+        <div class="navbar">
+            <a href="Mood Tracker.html" class="active">Mood Tracker</a>
+            <a href="AI Chatbot.html">AI Chatbot</a>
+            <a href="resources.html">Resources</a>
+            <a href="Book Therapy.html">Book Therapy</a>
+        </div>
+        <div class="user-options">
+            <a href="Profile.html">Profile</a>
+        </div>
     </div>
 
     <div class="main-content">
         <div class="content-left">
-            <h2>Welcome to Mental Wellness</h2>
+            <h2>Welcome, User</h2>
             <p>Mental wellness is an essential part of overall health. It involves finding balance in life, managing stress, and developing resilience. Our platform provides tools and resources to help you track your mood, access support, and learn strategies for maintaining mental well-being.</p>
             <p>Explore our self-help resources to find articles and guides on managing stress, understanding anxiety, and building emotional resilience. Whether you're looking to improve your sleep or seeking professional therapy, we are here to support you on your journey to mental wellness.</p>
         </div>
@@ -119,16 +39,20 @@
                 <div>29</div><div>30</div><div>31</div>
             </div>
             <div class="legend">
-                <p>H = Happy &nbsp; M = Mediocre &nbsp; N = Normal &nbsp; S = Sad</p>
+                <p>H = Happy &nbsp; N = Neutral &nbsp; S = Sad</p>
             </div>
         </div>
     </div>
 
     <div class="footer">
-        <button class="button">Track Your Mood</button>
-        <button class="button">AI Chatbot Support</button>
-        <button class="button">Self-Help Resources</button>
-        <button class="button">Book Therapy</button>
+        <div class="footer-section footer-section-left">
+            <h3>About Us</h3>
+            <p>Mental Wellness is dedicated to providing resources and support for mental health. Our platform offers tools to track your mood, access self-help resources, and connect with professional therapists.</p>
+        </div>
+        <div class="footer-section footer-section-right">
+            <h3>Contact</h3>
+            <p>Email: support@mentalwellness.com</p>
+        </div>
     </div>
 
 </body>
