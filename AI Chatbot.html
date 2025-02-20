@@ -13,7 +13,7 @@
         <a href="Landing.html">Mental Wellness</a>
     </div>
     <div class="navbar">
-        <a href="Mood Tracker.html" class="active">Mood Tracker</a>
+        <a href="Mood Tracker.html">Mood Tracker</a>
         <a href="AI Chatbot.html">AI Chatbot</a>
         <a href="resources.html">Resources</a>
         <a href="Book Therapy.html">Book Therapy</a>
@@ -22,6 +22,18 @@
         <a href="Profile.html">Profile</a>
     </div>
 </div>
+<script>
+    const currentLocation = window.location.href;
+    const navbarLinks = document.querySelectorAll('.navbar a');
+
+    navbarLinks.forEach(link => {
+        if (link.href === currentLocation) {
+            link.classList.add('active');
+        } else {
+            link.classList.remove('active');
+        }
+    });
+</script>
 
 <script>
     const API_KEY = "AIzaSyCL47TmTxvUzlFEZnoODoIsG7mO5wuSink";
