@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Wellness</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="header">
+    <div class="logo">
+        <a href="Landing.html">Mental Wellness</a>
+    </div>
+    <div class="navbar">
+        <a href="Mood Tracker.html" id="mood-tracker-link">Mood Tracker</a>
+        <a href="AI Chatbot.html" id="ai-chatbot-link">AI Chatbot</a>
+        <a href="resources.html" id="resources-link">Resources</a>
+        <a href="Book Therapy.html" id="book-therapy-link">Book Therapy</a>
+    </div>
+    <div class="user-options">
+        <a href="Profile.html">Profile</a>
+    </div>
+</div>
+
+<script>
+    const currentLocation = window.location.href;
+    const navbarLinks = document.querySelectorAll('.navbar a');
+
+    navbarLinks.forEach(link => {
+        if (link.href === currentLocation) {
+            link.classList.add('active');
+        } else {
+            link.classList.remove('active');
+        }
+    });
+</script>
+
+<div class="main-content">
+
+</div>
+
+<div class="footer">
+    <div class="footer-section footer-section-left">
+        <h3>About Us</h3>
+        <p>Mental Wellness is dedicated to providing resources and support for mental health. Our platform offers tools to track your mood, access self-help resources, and connect with professional therapists.</p>
+    </div>
+    <div class="footer-section footer-section-right">
+        <h3>Contact</h3>
+        <p>Email: support@mentalwellness.com</p>
+    </div>
+</div>
+
+
+
+</body>
+</html>
