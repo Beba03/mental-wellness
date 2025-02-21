@@ -1,0 +1,38 @@
+
+.header {
+    background-color: #87CEFA;
+    color: #000000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    height: 60px;
+}
+.logo a {
+    font-size: 28px;
+    font-weight: bold;
+    color: #000000;
+    text-decoration: none;
+}
+.navbar {
+    display: flex;
+    gap: 20px;
+}
+.navbar a {
+    color: #000000;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 20px;
+    transition: background-color 0.3s;
+}
+.navbar a.active,
+.navbar a:hover {
+    background-color: #E0FFFF;
+}
+.user-options a {
+    display: flex;
+    align-items: center;
+    color: #000000;
+    text-decoration: none;
+    font-weight: bold;
+}

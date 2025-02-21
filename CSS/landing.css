@@ -1,0 +1,57 @@
+.main-content {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.content-left {
+    background-color: #f8f9fa;
+    padding: 0px 20px 40px 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    height: fit-content;
+    margin: auto 50px auto 0;
+}
+.content-left h2 {
+    color: #333;
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+.content-left p {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+.content-right {
+    width: 300px;
+    height: 320px;
+    background-color: #ffffff;
+    padding: 20px;
+    padding-top: 5px;
+    border-radius: 25px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.349);
+    margin: auto;
+}
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 6px;
+    margin-top: 10px;
+}
+.calendar div {
+    background-color: #E0FFFF;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+.calendar div:hover {
+    background-color: #48D1CC;
+}
+.legend {
+    margin-top: 10px;
+    font-size: 0.9em;
+}
