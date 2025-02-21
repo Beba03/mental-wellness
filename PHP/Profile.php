@@ -8,7 +8,7 @@ include("Header.php");
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mental Wellness - Profile</title>
+    <title>Profile - Mental Wellness</title>
     <link rel="stylesheet" href="../CSS/base.css">
     <link rel="stylesheet" href="../CSS/profile.css">
 </head>
