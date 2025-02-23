@@ -26,7 +26,6 @@ if (isset($_GET['action'])) {
 
     /* Sign Up Logic */
     if ($_GET['action'] == 'signup') {
-
         $name = trim($_POST['name']);
         $email = strtolower(trim($_POST['email']));
         $password = $_POST['password'];
@@ -36,9 +35,9 @@ if (isset($_GET['action'])) {
         $errors = validateSignupData($name, $email, $password, $confirmPassword, $conn);
 
         if (empty($errors)) {
-            $result = registerUser($name, $email, $password, $gender, $conn);
-            if ($result) {
-                $user = mysqli_fetch_assoc($result);
+            $userId = registerUser($name, $email, $password, $gender, $conn);
+            if ($userId) {
+                $user = getUserById($userId, $conn); // Fetch the user by ID
                 $_SESSION = $user;
                 header("Location: Profile.php");
                 exit();
@@ -46,9 +45,7 @@ if (isset($_GET['action'])) {
                 $message = "Error: " . mysqli_error($conn);
             }
         } else {
-            foreach ($errors as $error) {
-                echo "<p>" . htmlspecialchars($error) . "</p>";
-            }
+            $message = "Error: " . mysqli_error($conn);
         }
         include 'Signup.php';
     }
@@ -60,12 +57,34 @@ if (isset($_GET['action'])) {
         exit();
     }
 
+    /* Booking Logic */
+    if ($_GET['action'] == "booking") {
+        $id = $_SESSION['id'];
+        $date = $_POST['date'];
+        $time = $_POST['time'];
+
+        $sql = "INSERT INTO bookings (user_id, date, time) VALUES ('$id', '$date', '$time')";
+        if (mysqli_query($conn, $sql)) {
+            header("Location: Book Therapy.php?status=success");
+            exit();
+        } else {
+            $message = "Error: " . mysqli_error($conn);
+        }
+    }
+    
 }
 
 mysqli_close($conn);
 ?>
 
 <?php
+
+function getUserById($id, $conn)
+{
+    $sql = "SELECT * FROM users WHERE id = '$id'";
+    $result = mysqli_query($conn, $sql);
+    return mysqli_fetch_assoc($result);
+}
 
 function getUserByEmail($email, $conn)
 {
@@ -129,7 +148,11 @@ function registerUser($name, $email, $password, $gender, $conn)
 {
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
     $sql = "INSERT INTO users (name, email, password, gender) VALUES ('$name', '$email', '$hashedPassword', '$gender')";
-    return mysqli_query($conn, $sql);
+    if (mysqli_query($conn, $sql)) {
+        return mysqli_insert_id($conn);
+    } else {
+        return false;
+    }
 }
 
 ?>

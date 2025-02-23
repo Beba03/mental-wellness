@@ -18,7 +18,7 @@
             </div>
             <div class="form-group">
                 <label for="email">Email:</label>
-                <input type="email" id="email" name="email" >
+                <input type="email" id="email" name="email">
             </div>
             <div class="form-group">
                 <label for="password">Password:</label>
@@ -37,7 +37,13 @@
                     <option value="O">Other</option>
                 </select>
             </div>
-            <div id="error-messages" style="color: red;"></div>
+            <div id="error-messages" style="color: red;">
+                <?php if (!empty($errors)): ?>
+                    <?php foreach ($errors as $error): ?>
+                        <p><?php echo htmlspecialchars($error); ?></p>
+                    <?php endforeach; ?>
+                <?php endif; ?>
+            </div>
             <button type="submit" class="auth-button">Sign Up</button>
         </form>
         <p>Already have an account? <a href="login.php">Login here</a></p>
@@ -53,19 +59,18 @@
             const passwordRegex = /^(?=.*[A-Z])(?=.*[!@#$%^&*])(?=.{8,})/;
             let errors = [];
             if (!passwordRegex.test(password)) {
-                errors.push('Password must be at least 8 characters long, contain at least one uppercase letter, and one special character.');
+                errors.push('Password must be at least 8 characters long<br>contain one uppercase letter, and one special character.');
             }
             if (password !== confirmPassword) {
                 errors.push('Passwords do not match.');
             }
-
             if (errors.length > 0) {
                 event.preventDefault();
                 errorMessages.innerHTML = errors.join('<br>');
             }
         });
     </script>
-    
+
 </body>
 
 </html>

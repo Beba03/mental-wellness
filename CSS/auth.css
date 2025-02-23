@@ -68,3 +68,12 @@
 .auth-container a:hover {
     color: #48D1CC;
 }
+.error-messages {
+    color: red;
+    margin-bottom: 15px;
+    text-align: left;
+}
+.error-messages p {
+    margin: 0;
+    font-size: 14px;
+}
