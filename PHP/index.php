@@ -30,10 +30,10 @@ if (isset($_GET['action'])) {
         $email = strtolower(trim($_POST['email']));
         $password = $_POST['password'];
         $confirmPassword = $_POST['confirm-password'];
-        $gender = $_POST['gender']; 
+        $gender = $_POST['gender'];
 
-        $errors = validateSignupData($name, $email, $password, $confirmPassword, $conn); 
-        
+        $errors = validateSignupData($name, $email, $password, $confirmPassword, $conn);
+
         if (empty($errors)) {
             $userId = registerUser($name, $email, $password, $gender, $conn);
             if ($userId) {
@@ -58,20 +58,20 @@ if (isset($_GET['action'])) {
     }
 
     /* Booking Logic */
-    if ($_SERVER["REQUEST_METHOD"] == "booking") {
-
-        $id = $user['id']; 
+    if ($_GET['action'] == "booking") {
+        $id = $_SESSION['id'];
         $date = $_POST['date'];
-        $time = $_POST['time'];      
+        $time = $_POST['time'];
 
         $sql = "INSERT INTO bookings (user_id, date, time) VALUES ('$id', '$date', '$time')";
         if (mysqli_query($conn, $sql)) {
-            $message = "Booking successful!";
+            header("Location: Book Therapy.php?status=success");
+            exit();
         } else {
             $message = "Error: " . mysqli_error($conn);
         }
     }
-
+    
 }
 
 mysqli_close($conn);
@@ -79,7 +79,8 @@ mysqli_close($conn);
 
 <?php
 
-function getUserById($id, $conn) {
+function getUserById($id, $conn)
+{
     $sql = "SELECT * FROM users WHERE id = '$id'";
     $result = mysqli_query($conn, $sql);
     return mysqli_fetch_assoc($result);
@@ -143,7 +144,8 @@ function emailExists($email, $conn)
     return mysqli_num_rows($result) > 0;
 }
 
-function registerUser($name, $email, $password, $gender, $conn) {
+function registerUser($name, $email, $password, $gender, $conn)
+{
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
     $sql = "INSERT INTO users (name, email, password, gender) VALUES ('$name', '$email', '$hashedPassword', '$gender')";
     if (mysqli_query($conn, $sql)) {

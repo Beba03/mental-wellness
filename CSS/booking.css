@@ -5,12 +5,16 @@ body {
 }
 
 .main-content {
+    flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 20px;
     margin: 0 auto;
 }
+
+   
+
 
 .content-left {
     flex: 1;

@@ -1,6 +1,10 @@
 <?php
 include 'headerlogic.php';
 include 'Header.php';
+$message = '';
+if (isset($_GET['status']) && $_GET['status'] == 'success') {
+    $message = "Booking successful!";
+}
 ?>
 
 <!DOCTYPE html>
@@ -23,9 +27,12 @@ include 'Header.php';
             <h2>Book Your Therapy Session</h2>
             <p>Please fill in the form!</p>
 
-             <?php if (!empty($message)) echo "<p>" . htmlspecialchars($message) . "</p>"; ?>
+            <?php if (!empty($message)): ?>
+                <p class="confirmation-message"><?php echo htmlspecialchars($message); ?></p>
+            <?php endif; ?>
 
             <form action="index.php?action=booking" method="POST">
+
                 <div class="input-box">
                     <i class="fas fa-calendar"></i>
                     <input type="date" id="date" name="date" required>
