@@ -119,12 +119,6 @@ include("Header.php");
     </div>
 
     <div class="article-box">
-        <h3>Journaling for Mental Clarity</h3>
-        <p>Using journaling to improve emotional well-being.</p>
-        <a href="https://positivepsychology.com/journaling-for-mental-health/" target="_blank">Read More</a>
-    </div>
-
-    <div class="article-box">
         <h3>Supporting a Friend with Mental Illness</h3>
         <p>How to be there for someone struggling with mental health.</p>
         <a href="https://www.samhsa.gov/families" target="_blank">Read More</a>
