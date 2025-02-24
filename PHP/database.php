@@ -4,7 +4,9 @@ $username = "root";
 $password = "";
 $dbname = "mentalwellnessdb";
 
+
 // Create database connection
+
 $conn = new mysqli($servername, $username, $password, $dbname);
 
 // Check connection
