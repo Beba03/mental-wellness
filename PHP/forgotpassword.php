@@ -5,6 +5,7 @@ use PHPMailer\PHPMailer\Exception;
 require 'vendor/autoload.php'; // Load PHPMailer
 
 require_once("database.php");
+$conn = getDatabaseConnection(); // Ensure the $conn variable is initialized
 
 $message = ""; // Initialize message variable
 
