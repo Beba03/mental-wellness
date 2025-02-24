@@ -50,6 +50,25 @@ if (isset($_GET['action'])) {
         include 'Signup.php';
     }
 
+    if ($_GET['action'] == 'forgetpass') {
+        $email = strtolower(trim($_POST['email']));
+        $password = $_POST['password'];
+        $confirmPassword = $_POST['confirm-password'];
+    
+        $errors = validatePasswordData($email, $password, $confirmPassword, $conn);
+    
+        if (empty($errors)) {
+            if (updatePassword($email, $password, $conn)) {
+                $message = "Password updated successfully!";
+            } else {
+                $message = "Error: " . mysqli_error($conn);
+            }
+        } else {
+            $message = implode("<br>", $errors);
+        }
+        include 'Forgetpassword.php';
+    }
+
     /*Log out Logic*/
     if ($_GET['action'] == 'logout') {
         session_destroy();
@@ -153,6 +172,38 @@ function registerUser($name, $email, $password, $gender, $conn)
     } else {
         return false;
     }
+}
+
+function validatePasswordData($email, $password, $confirmPassword, $conn) {
+    $errors = [];
+
+    // Validate email
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $errors[] = "Invalid email format.";
+    }
+
+    // Validate password
+    if (!preg_match('/^(?=.*[A-Z])(?=.*[!@#$%^&*])(?=.{8,10})/', $password)) {
+        $errors[] = "Password must be at least 8 characters long, contain at least one uppercase letter, and one special character.";
+    }
+
+    // Check password match
+    if ($password !== $confirmPassword) {
+        $errors[] = "Passwords do not match.";
+    }
+
+    // Check if email exists
+    if (!emailExists($email, $conn)) {
+        $errors[] = "Email not found.";
+    }
+
+    return $errors;
+}
+
+function updatePassword($email, $password, $conn) {
+    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+    $sql = "UPDATE users SET password = '$hashedPassword' WHERE email = '$email'";
+    return mysqli_query($conn, $sql);
 }
 
 ?>
