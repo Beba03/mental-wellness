@@ -18,8 +18,10 @@
             <h2>Welcome, <?php 
                 $isLoggedIn = isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true;
                 if ($isLoggedIn) {
+                    echo'helllooooooooooo';
                     echo htmlspecialchars($_SESSION['name']);
                 } else {
+                    echo $_SESSION['name'];
                     echo "User";
                 }
                 ?></h2>

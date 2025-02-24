@@ -147,7 +147,7 @@ function emailExists($email, $conn)
 function registerUser($name, $email, $password, $gender, $conn)
 {
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-    $sql = "INSERT INTO users (name, email, password, gender) VALUES ('$name', '$email', '$hashedPassword', '$gender')";
+    $sql = "INSERT INTO users (name, email, password, sex) VALUES ('$name', '$email', '$hashedPassword', '$gender')";
     if (mysqli_query($conn, $sql)) {
         return mysqli_insert_id($conn);
     } else {
