@@ -23,7 +23,7 @@
         <button type="submit" class="auth-button">Login</button>
     </form>
     <p>Don't have an account? <a href="signup.php">Register here</a></p>
-    <p><a href="forgotpassword.php">Forgot Password?</a></p> <!-- Forgot password link -->
+    <p><a href="Forgetpassword.php">Forgot Password?</a></p> <!-- Forgot password link -->
     <?php if (!empty($message)) echo "<p>" . htmlspecialchars($message) . "</p>"; ?>
 </div>
 </body>
