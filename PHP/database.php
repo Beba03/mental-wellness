@@ -1,14 +1,15 @@
 <?php
-    $db_server="localhost";
-    $db_user = "root";
-    $db_pass = "";
-    $db_name = "mentalwellnessdb";
-    $conn = "";
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "mentalwellnessdb";
 
-    try{
-        $conn=mysqli_connect($db_server,$db_user,$db_pass,$db_name);
-    }catch(mysqli_sql_exception){
-        echo"Could not connect!";
-    }
+// Create database connection
+$conn = new mysqli($servername, $username, $password, $dbname);
 
+// Check connection
+if ($conn->connect_error) {
+    die("Database connection failed: " . $conn->connect_error);
+}
 ?>
+

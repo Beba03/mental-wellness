@@ -1,5 +1,6 @@
 <?php
 include("headerlogic.php");
+$isLoggedIn = isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn'] === true;
 include("Header.php");
 ?>
 

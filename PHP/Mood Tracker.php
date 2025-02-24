@@ -30,5 +30,5 @@
 
 
 <?php
-    include("..\HTML\Footer.html");
+include("../HTML/Footer.html");
 ?>
