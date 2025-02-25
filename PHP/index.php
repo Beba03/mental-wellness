@@ -84,7 +84,7 @@ if (isset($_GET['action'])) {
 
         $sql = "INSERT INTO bookings (user_id, date, time) VALUES ('$id', '$date', '$time')";
         if (mysqli_query($conn, $sql)) {
-            header("Location: Book Therapy.php?status=success");
+            header("Location: BookTherapy.php?status=success");
             exit();
         } else {
             $message = "Error: " . mysqli_error($conn);
