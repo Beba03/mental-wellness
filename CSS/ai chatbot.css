@@ -108,6 +108,35 @@ button {
 button:hover {
     background: #005ecb;
 }
+
+/* Footer section */
+.footer {
+    background-color: #87CEFA;
+    padding: 5px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    color: #000000;
+    margin-top: auto; /* This pushes the footer to the bottom */
+}
+.footer-section {
+    max-width: 600px;
+    margin: 10px;
+}
+.footer-section h3 {
+    margin-bottom: 5px;
+    font-size: 18px;
+    color: #333;
+}
+.footer-section p {
+    margin: 5px 0;
+    font-size: 14px;
+    line-height: 1.5;
+}
+.footer-section-right {
+    text-align: right;
+}
+
 /* AI Bubble (Three dots) */
 .ai-bubble {
     background: #e5e5ea;
