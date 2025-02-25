@@ -35,12 +35,6 @@ include("Header.php");
     </div>
 
     <div class="article-box">
-        <h3>Managing Panic Attacks</h3>
-        <p>Recognizing and coping with panic attacks effectively.</p>
-        <a href="https://www.verywellmind.com/panic-attack-symptoms-and-treatment-2584304" target="_blank">Read More</a>
-    </div>
-
-    <div class="article-box">
         <h3>Understanding PTSD</h3>
         <p>What is PTSD and how can it be managed?</p>
         <a href="https://www.ptsd.va.gov/" target="_blank">Read More</a>
@@ -77,12 +71,6 @@ include("Header.php");
     </div>
 
     <div class="article-box">
-        <h3>Dealing with Negative Thoughts</h3>
-        <p>Techniques to challenge and reframe negative thinking patterns.</p>
-        <a href="https://www.psychologytools.com/self-help/challenging-negative-thoughts/" target="_blank">Read More</a>
-    </div>
-
-    <div class="article-box">
         <h3>The Benefits of Exercise on Mental Health</h3>
         <p>How physical activity improves mood and reduces stress.</p>
         <a href="https://www.mentalhealth.org.uk/explore-mental-health/a-z-topics/physical-activity-and-mental-health" target="_blank">Read More</a>
@@ -98,12 +86,6 @@ include("Header.php");
         <h3>Breaking the Stigma Around Mental Health</h3>
         <p>Why mental health awareness is important.</p>
         <a href="https://www.time-to-change.org.uk/" target="_blank">Read More</a>
-    </div>
-
-    <div class="article-box">
-        <h3>How Music Affects Mental Health</h3>
-        <p>Exploring the therapeutic benefits of music.</p>
-        <a href="https://www.psychologytoday.com/us/blog/science-and-sensibility/202109/music-and-mental-health-3-ways-music-helps-you" target="_blank">Read More</a>
     </div>
 
     <div class="article-box">
@@ -203,12 +185,6 @@ include("Header.php");
         </div>
 
         <div class="article-box">
-            <h3>How to Overcome Fear and Anxiety</h3>
-            <p>Strategies to manage irrational fears and general anxiety.</p>
-            <a href="https://www.helpguide.org/articles/anxiety/overcoming-fear-and-anxiety.htm" target="_blank">Read More</a>
-        </div>
-
-        <div class="article-box">
             <h3>How Art Therapy Helps Mental Health</h3>
             <p>The benefits of creative expression for emotional healing.</p>
             <a href="https://www.psychologytoday.com/us/therapy-types/art-therapy" target="_blank">Read More</a>
@@ -224,12 +200,6 @@ include("Header.php");
             <h3>The Impact of Pets on Mental Health</h3>
             <p>How animals help reduce stress and improve happiness.</p>
             <a href="https://www.mentalhealth.org.uk/explore-mental-health/a-z-topics/pets-and-mental-health" target="_blank">Read More</a>
-        </div>
-
-        <div class="article-box">
-            <h3>How Volunteering Improves Mental Health</h3>
-            <p>The psychological benefits of helping others.</p>
-            <a href="https://www.mayoclinichealthsystem.org/hometown-health/speaking-of-health/the-health-benefits-of-volunteering" target="_blank">Read More</a>
         </div>
 
         <div class="article-box">
