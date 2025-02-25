@@ -1,6 +1,8 @@
 <?php
 include("headerlogic.php");
 include("Header.php");
+
+$userName = isset($_SESSION['name']) ? $_SESSION['name'] : 'Guest';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,8 +15,11 @@ include("Header.php");
 </head>
 
 <script>
+
+    var loggedInUserName = "<?php echo htmlspecialchars($userName); ?>";
+
     async function sendGreeting() {
-        appendMessage("AI", "Hello! How are you feeling today?");
+        appendMessage("AI", "Hello " + loggedInUserName + "! How are you feeling today?");
     }
 
     async function sendMessage() {
