@@ -1,25 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
 .footer {
     background-color: #87CEFA;
-    padding: 5px 10px;
+    color: #ffffff;
+    padding: 0px;
+    padding-right: 20px;
+    padding-left: 20px;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    color: #000000;
+    flex-wrap: wrap;
+    font-family: 'Poppins', sans-serif; /* Applied modern font */
 }
+
 .footer-section {
-    max-width: 600px;
+    max-width: 300px;
     margin: 10px;
+    text-align: center; /* Centers content inside the section */
 }
+
 .footer-section h3 {
-    margin-bottom: 5px; 
-    font-size: 18px;
-    color: #333;
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: black;
+    text-decoration: underline; /* Underline the headings */
+    font-weight: 600; /* Bold for emphasis */
 }
-.footer-section p {
-    margin: 5px 0;
+
+.footer-section p, .footer-section ul {
     font-size: 14px;
     line-height: 1.5;
+    margin: 5px 0;
+    color: black;
+    font-weight: 400;
 }
-.footer-section-right {
-    text-align: right;
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin: 5px 0;
+}
+
+.footer-section ul li a {
+    color: black; /* Changed link color to black */
+    text-decoration: none;
+    font-weight: 300; /* Light font for a sleek look */
+}
+
+.footer-section ul li a:hover {
+    text-decoration: underline;
+}
+
+.social-links {
+    text-align: center; /* Centers social links */
+}
+
+.social-links a {
+    display: inline-block;
+    margin: 5px;
+}
+
+.social-links img {
+    width: 24px;
+    height: 24px;
 }

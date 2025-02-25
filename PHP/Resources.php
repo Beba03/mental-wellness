@@ -125,7 +125,6 @@ include("Header.php");
     </div>
 
     <div class="article-box">
-        <div class="article-box">
             <h3>Understanding Schizophrenia</h3>
             <p>What schizophrenia is and how to manage it.</p>
             <a href="https://www.nimh.nih.gov/health/topics/schizophrenia" target="_blank">Read More</a>
