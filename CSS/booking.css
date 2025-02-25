@@ -124,3 +124,6 @@ button:hover {
 .delete-button:hover {
     background: #0056b3;
 }
+.confirmation-message {
+    color: red;
+}
