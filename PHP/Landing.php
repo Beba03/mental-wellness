@@ -1,47 +1,71 @@
 <?php
-    include("headerlogic.php");
-    include("Header.php");
+include("headerlogic.php"); // Starts session and sets $isLoggedIn
+include("Header.php");
+include("database.php");
+
+// Check if user is logged in using $_SESSION['id']
+$user_id = isset($_SESSION['id']) ? $_SESSION['id'] : null;
+
+// Fetch mood entries only if user is logged in
+$mood_entries = [];
+if ($user_id) {
+    $query = "SELECT mood, comment, date FROM moods WHERE user_id = ? ORDER BY date DESC LIMIT 7";
+    $stmt = $conn->prepare($query);
+    $stmt->bind_param("i", $user_id);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $mood_entries = $result->fetch_all(MYSQLI_ASSOC);
+    $stmt->close(); // Close statement
+}
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mental Wellness</title>
-    <link rel="stylesheet" href="../CSS/landing.css">
-</head>
-
-<body>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Mental Wellness</title>
+        <link rel="stylesheet" href="../CSS/landing.css?v=<?php echo time(); ?>">
+    </head>
+    <body>
     <div class="main-content">
         <div class="content-left">
-            <h2>Welcome, <?php 
-                if ($isLoggedIn) {
-                    echo htmlspecialchars($_SESSION['name']);
-                } else {
-                    echo "User";
-                }
-                ?></h2>
+            <?php if ($user_id): ?>
+                <h2>Welcome, <?php echo htmlspecialchars($_SESSION['name']); ?></h2>
+            <?php else: ?>
+                <h2>Welcome to Mental Wellness</h2>
+            <?php endif; ?>
+
+            <p>Mental wellness is essential. Track your mood and explore resources to improve your well-being.</p>
             <p>Mental wellness is an essential part of overall health. It involves finding balance in life, managing stress, and developing resilience. Our platform provides tools and resources to help you track your mood, access support, and learn strategies for maintaining mental well-being.</p>
             <p>Explore our self-help resources to find articles and guides on managing stress, understanding anxiety, and building emotional resilience. Whether you're looking to improve your sleep or seeking professional therapy, we are here to support you on your journey to mental wellness.</p>
         </div>
+
         <div class="content-right">
-            <h3>Mood Tracker</h3>
-            <div class="calendar">
-                <div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div><div>7</div>
-                <div>8</div><div>9</div><div>10</div><div>11</div><div>12</div><div>13</div><div>14</div>
-                <div>15</div><div>16</div><div>17</div><div>18</div><div>19</div><div>20</div><div>21</div>
-                <div>22</div><div>23</div><div>24</div><div>25</div><div>26</div><div>27</div><div>28</div>
-                <div>29</div><div>30</div><div>31</div>
-            </div>
-            <div class="legend">
-                <p>H = Happy &nbsp; N = Neutral &nbsp; S = Sad</p>
+            <h3>Recent Mood Entries</h3>
+            <div class="mood-history">
+                <?php if ($user_id && count($mood_entries) > 0): ?>
+                    <ul>
+                        <?php foreach ($mood_entries as $row): ?>
+                            <li>
+                                <strong><?php echo htmlspecialchars($row['date']); ?>:</strong>
+                                <?php echo htmlspecialchars($row['mood']); ?> -
+                                "<?php echo htmlspecialchars($row['comment']); ?>"
+                            </li>
+                        <?php endforeach; ?>
+                    </ul>
+                <?php elseif ($user_id): ?>
+                    <p>No mood entries logged yet.</p>
+                <?php else: ?>
+                    <p>Please <a href="login.php">log in</a> to track your mood.</p>
+                <?php endif; ?>
             </div>
         </div>
     </div>
-</body>
-</html>
+    </body>
+    </html>
 
 <?php
 include("../HTML/Footer.html");
+$conn->close(); // Close database connection
 ?>

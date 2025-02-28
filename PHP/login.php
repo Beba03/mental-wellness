@@ -10,6 +10,7 @@
 
 <body class="auth-body">
 <div class="auth-container">
+    <p class="access-note">For Full Access To Our Website, Please Login Or Sign Up</p>
     <h2>Login</h2>
     <form action="index.php?action=login" method="post">
         <div class="form-group">
@@ -23,7 +24,7 @@
         <button type="submit" class="auth-button">Login</button>
     </form>
     <p>Don't have an account? <a href="signup.php">Register here</a></p>
-    <p><a href="Forgetpassword.php">Forgot Password?</a></p> <!-- Forgot password link -->
+    <p><a href="Forgetpassword.php">Forgot Password?</a></p>
     <?php if (!empty($message)) echo "<p>" . htmlspecialchars($message) . "</p>"; ?>
 </div>
 </body>
