@@ -1,12 +1,12 @@
 <?php
-include("headerlogic.php"); // Starts session and sets $isLoggedIn
+include("headerlogic.php");
 include("Header.php");
-include("database.php"); // Include database connection
+include("database.php");
 
 // Check if user is logged in and get user ID
 $user_id = isset($_SESSION['id']) ? $_SESSION['id'] : null;
 
-// Fetch the most recent mood if logged in
+// Fetch the first mood of the day
 $general_mood = "Not Set"; // Default mood
 if ($user_id) {
     $query = "SELECT mood FROM moods WHERE user_id = ? ORDER BY date DESC LIMIT 1";
@@ -49,7 +49,7 @@ if ($user_id) {
                             case 'Average': echo '😐'; break;
                             case 'Great': echo '😊'; break;
                             case 'Amazing': echo '😊'; break;
-                            default: echo '🤔'; // For "Not Set" or unexpected values
+                            default: echo '🤔';
                         }
                         ?>
                     </span>
