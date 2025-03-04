@@ -66,7 +66,7 @@ if (isset($_GET['action'])) {
         } else {
             $message = implode("<br>", $errors);
         }
-        include 'Forgetpassword.php';
+        include 'Changepassword.php';
     }
 
     /*Log out Logic*/
