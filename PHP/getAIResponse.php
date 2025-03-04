@@ -1,5 +1,5 @@
 <?php
-include("config.php");
+include("APIKey.php");
 
 header("Content-Type: application/json");
 
