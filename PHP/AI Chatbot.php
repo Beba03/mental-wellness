@@ -50,7 +50,7 @@ $userName = isset($_SESSION['name']) ? $_SESSION['name'] : 'Guest';
             // Ensure bullet points are properly formatted
             aiResponse = aiResponse.replace(/•\s?/g, "<br>• ");
 
-            // Remove the three dots bubble and append the AI's response
+            // Remove the three dots bubble when a response is generated
             aiBubble.remove();
             appendMessage("AI", aiResponse);
         } catch (error) {

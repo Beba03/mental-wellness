@@ -4,17 +4,6 @@ body {
     background: #e0f7fa; 
     margin: 0;
 }
-
-header {
-    width: 100%;
-    background: #007BFF;
-    color: white;
-    text-align: center;
-    padding: 15px;
-    font-size: 22px;
-    font-weight: bold;
-}
-
 .main-content {
     display: flex;
     justify-content: center;

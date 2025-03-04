@@ -3,6 +3,7 @@ header("Content-Type: application/json");
 session_start();
 include("database.php");
 
+//check if user logged in or not
 if (!isset($_SESSION["user_id"])) {
     echo json_encode(["success" => false, "message" => "User not logged in."]);
     exit();

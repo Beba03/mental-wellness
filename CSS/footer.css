@@ -11,21 +11,22 @@
     align-items: flex-start;
     flex-wrap: wrap;
     margin-bottom: 0;
-    font-family: 'Poppins', sans-serif; /* Applied modern font */
+    font-family: 'Poppins', sans-serif;
+    margin-top: auto;
 }
 
 .footer-section {
     max-width: 300px;
     margin: 10px;
-    text-align: center; /* Centers content inside the section */
+    text-align: center;
 }
 
 .footer-section h3 {
     font-size: 20px;
     margin-bottom: 10px;
     color: black;
-    text-decoration: underline; /* Underline the headings */
-    font-weight: 600; /* Bold for emphasis */
+    text-decoration: underline;
+    font-weight: 600;
 }
 
 .footer-section p, .footer-section ul {
@@ -46,9 +47,9 @@
 }
 
 .footer-section ul li a {
-    color: black; /* Changed link color to black */
+    color: black;
     text-decoration: none;
-    font-weight: 300; /* Light font for a sleek look */
+    font-weight: 300;
 }
 
 .footer-section ul li a:hover {
@@ -56,7 +57,7 @@
 }
 
 .social-links {
-    text-align: center; /* Centers social links */
+    text-align: center;
 }
 
 .social-links a {

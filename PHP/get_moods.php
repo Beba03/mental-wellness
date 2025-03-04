@@ -11,13 +11,13 @@ if (!isset($_SESSION['user_id'])) {
 
 $user_id = $_SESSION['user_id']; // Get user_id from session
 
-// Query to fetch the logged moods for the logged-in user
+// fetch the logged moods for the logged in user
 $query = "SELECT mood, comment, date FROM moods WHERE user_id = ? ORDER BY date DESC";
 $stmt = $conn->prepare($query);
 $stmt->bind_param("i", $user_id);
 $stmt->execute();
 
-// Fetch the results
+// getting the results
 $result = $stmt->get_result();
 $moods = [];
 

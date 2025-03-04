@@ -1,16 +1,16 @@
 <?php
-// Include necessary files (session is started in headerlogic.php)
+// Include necessary files
 include 'headerlogic.php';
 include 'Header.php';
 include 'database.php';
 
 // Check if user is logged in
 if (!isset($_SESSION['id'])) {
-    header("Location: login.php"); // Adjust to your login page
+    header("Location: login.php"); // redirect user to login page
     exit();
 }
 
-$user_id = $_SESSION['id']; // Safe to use now
+$user_id = $_SESSION['id'];
 global $conn;
 
 // Fetch all booked slots for all users
@@ -22,7 +22,7 @@ while ($row = $result->fetch_assoc()) {
     $bookedSlots[] = $row['date'] . ' ' . $row['time'];
 }
 
-// Generate available dates (from today to 1 month in advance, excluding weekends)
+// available dates (from today to 1 month in advance, excluding weekends)
 $availableDates = [];
 $today = strtotime("today");
 $oneMonthLater = strtotime("+1 month");
@@ -33,7 +33,7 @@ for ($date = $today; $date <= $oneMonthLater; $date = strtotime("+1 day", $date)
     }
 }
 
-// Generate available time slots (9:00 AM - 5:00 PM in 30 min increments)
+// available time slots (9:00 AM - 5:00 PM in 30 min increments)
 $timeSlots = [];
 $startTime = strtotime("09:00");
 $endTime = strtotime("17:00");
@@ -85,7 +85,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 ?>
-
     <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -155,5 +154,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </body>
     </html>
 <?php
+include("../HTML/Footer.html");
 $conn->close();
 ?>

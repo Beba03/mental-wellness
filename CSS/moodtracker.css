@@ -8,7 +8,7 @@ html, body {
 }
 
 .main-content {
-    flex: 1 0 auto; /* Allows it to grow but not shrink below its content */
+    flex: 1 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -25,12 +25,4 @@ html, body {
     border-radius: 10px;
     text-align: center;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-}
-
-footer {
-    flex-shrink: 0; /* Prevents footer from shrinking */
-    width: 100%;
-    background-color: #f8f9fa; /* Adjust as per your footer styling */
-    padding: 1rem 0;
-    text-align: center;
 }
