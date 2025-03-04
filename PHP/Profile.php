@@ -21,7 +21,7 @@ include("Header.php");
                 <h2><?php echo $isLoggedIn ? htmlspecialchars($_SESSION['name']) : "User"; ?></h2>
                 <p>General Mood: <span style="color: green;">Happy 😊</span></p>
                 <p>Email: <?php echo $isLoggedIn ? htmlspecialchars($_SESSION['email']) : "User"; ?></p>
-                <p>Password: ******** <a href="#">Change Password</a></p>
+                <p>Password: ******** <a href="Forgetpassword.php">Change Password</a></p>
                 <form action="index.php?action=logout" method="post">
                     <button type="submit" name="logout" class="auth-button">Log out</button>
                 </form>

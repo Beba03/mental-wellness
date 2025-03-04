@@ -9,7 +9,7 @@
 
 <body class="auth-body">
     <div class="auth-container">
-        <h2>Forgot Password</h2>
+        <h2>Change Password</h2>
         <form id="forgetpass-form" action="index.php?action=forgetpass" method="post">
 
             <div class="form-group">
