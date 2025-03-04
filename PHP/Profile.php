@@ -38,7 +38,7 @@ if ($user_id) {
             <div class="profile-image">😊</div>
             <div class="profile-info">
                 <h2><?php echo $isLoggedIn ? htmlspecialchars($_SESSION['name']) : "User"; ?></h2>
-                <p>General Mood:
+                <p>Mood of the Day:
                     <span style="color: <?php echo $general_mood === 'Very Tough' || $general_mood === 'Difficult' ? 'red' : 'green'; ?>">
                         <?php echo htmlspecialchars($general_mood); ?>
                         <?php
