@@ -32,7 +32,7 @@ To access the Database and Tables, visit [PHPMyAdmin](https://www.phpmyadmin.co/
 To view the website locally:
 
 Start the Apache and MySQL modules in the XAMPP Control Panel.
-Open a web browser and go to http://localhost/your-project-folder.
+Open a web browser and go to [Mental Wellness](http://localhost/Mental-Wellness/PHP/Landing.php).
 
 To view the deployed website, visit: [Mental Wellness Website](http://mentalwellness.thsite.top)
 
