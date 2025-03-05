@@ -37,6 +37,6 @@ Open a web browser and go to [Mental Wellness](http://localhost/Mental-Wellness/
 To view the deployed website, visit: [Mental Wellness Website](http://mentalwellness.thsite.top)
 
 
-Project Link: https://github.com/your-username/your-repository
+Project Link: [Git Repositary](https://github.com/Beba03/Mental-Wellness)
 
 Special thanks to the free hosting services used: Tinker Host and FreeSQL Database.
