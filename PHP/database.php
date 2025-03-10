@@ -1,12 +1,10 @@
 <?php
-$servername = "sql8.freesqldatabase.com";
-$username = "sql8764433";
-$password = "2d8yRrstHt";
-$dbname = "sql8764433";
-
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "mentalwellnessdb";
 
 // Create database connection
-
 $conn = new mysqli($servername, $username, $password, $dbname);
 
 // Check connection
