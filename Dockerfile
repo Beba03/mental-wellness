@@ -1,7 +1,5 @@
-# Use an official PHP image with Apache
 FROM php:8.0-apache
 
-# Install necessary PHP extensions
 RUN docker-php-ext-install mysqli
 
 # Copy the website files to the container

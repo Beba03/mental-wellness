@@ -1,4 +1,5 @@
 <?php
+    ob_start();
     session_start();
     $isLoggedIn = isset($_SESSION['id']);
     $current_page = basename($_SERVER['PHP_SELF']);
@@ -6,7 +7,7 @@
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('profile-link').addEventListener('click', function(event) {
-            event.preventDefault(); // Prevent default link behavior
+            event.preventDefault();
             var isLoggedIn = <?php echo json_encode($isLoggedIn); ?>;
 
             if (isLoggedIn) {
