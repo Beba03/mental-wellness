@@ -1,4 +1,3 @@
-`markdown
 # Mental Wellness
 
 Mental Wellness is a website dedicated to promoting mental health and well-being. It provides resources, articles, and tools to help users manage their mental health effectively. The website uses a database to store and manage user data and resources.
