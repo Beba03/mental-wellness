@@ -1,4 +1,5 @@
 <?php
+ob_start();
 include("headerlogic.php");
 include("Header.php");
 include("database.php");
@@ -67,5 +68,6 @@ if ($user_id) {
 
 <?php
 include("../HTML/Footer.html");
-$conn->close(); // Close database connection
+$conn->close();
+ob_end_flush();
 ?>

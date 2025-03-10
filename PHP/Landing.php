@@ -1,5 +1,11 @@
 <?php
-include("headerlogic.php"); // Starts session and sets $isLoggedIn
+
+if ($_SERVER['REQUEST_URI'] == '/') {
+    header('Location: /PHP/Landing.php');
+    exit();
+}
+
+include("headerlogic.php"); 
 include("Header.php");
 include("database.php");
 
