@@ -52,9 +52,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $deleteQuery->bind_param("ii", $booking_id, $user_id);
 
         if ($deleteQuery->execute()) {
-            $message = "Booking deleted successfully!";
+            $message = "Booking Cancelled Successfully!";
         } else {
-            $message = "Error deleting the booking: " . $conn->error;
+            $message = "Error cancelling the booking: " . $conn->error;
         }
         $deleteQuery->close();
     } else {
@@ -142,7 +142,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                             <span><?php echo htmlspecialchars($row['date']); ?> at <?php echo htmlspecialchars($row['time']); ?></span>
                             <form action="BookTherapy.php" method="POST" class="delete-form">
                                 <input type="hidden" name="booking_id" value="<?php echo $row['id']; ?>">
-                                <button type="submit" name="delete" class="delete-button">Delete</button>
+                                <button type="submit" name="delete" class="delete-button">Cancel Session</button>
                             </form>
                         </div>
                     </li>
