@@ -42,7 +42,7 @@ if ($user_id) {
                 <h2>Welcome to Mental Wellness</h2>
             <?php endif; ?>
 
-            <p>Mental wellness is essential. Track your mood and explore resources to improve your well-being.</p>
+            <p>Mental wellness is crucial. Track your mood and explore resources to improve your well-being.</p>
             <p>Mental wellness is an essential part of overall health. It involves finding balance in life, managing stress, and developing resilience. Our platform provides tools and resources to help you track your mood, access support, and learn strategies for maintaining mental well-being.</p>
             <p>Explore our self-help resources to find articles and guides on managing stress, understanding anxiety, and building emotional resilience. Whether you're looking to improve your sleep or seeking professional therapy, we are here to support you on your journey to mental wellness.</p>
         </div>
@@ -63,7 +63,7 @@ if ($user_id) {
                 <?php elseif ($user_id): ?>
                     <p>No mood entries logged yet.</p>
                 <?php else: ?>
-                    <p>Please <a href="login.php">log in</a> to track your mood.</p>
+                    <p>Please <a href="login.php">Log in</a> to track your mood.</p>
                 <?php endif; ?>
             </div>
         </div>
