@@ -1,55 +1,108 @@
-# Mental Wellness
+# 💚 Mental Wellness Website
 
-Mental Wellness is a website dedicated to promoting mental health and well-being. It provides resources, articles, and tools to help users manage their mental health effectively. The website uses a database to store and manage user data and resources.
+A full-stack **Mental Wellness web application** built with **HTML, CSS, JavaScript, and PHP (with PHPUnit and Composer)**.  
+This platform helps users **track their daily mood**, **book wellness sessions**, **chat with a simple wellness chatbot**, and **access curated mental health resources**.  
+It features a login & signup system, secure backend integration with PHP/MySQL, a responsive frontend, and containerized deployment using **Docker**.
 
-## Installation
 
-To set up the project locally, follow these steps:
+---
 
-### Using XAMPP
+## ✨ Features
+- 🔐 **Authentication**
+  - User sign-up & login with session management  
+  - Basic form validation & secure handling in PHP  
 
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/your-username/your-repository.git
-   ```
+- 📊 **Daily Mood Tracking**
+  - Users can log their daily mood  
+  - Simple dashboard for tracking emotional progress  
 
-2. **Open the project in VS Code:**
+- 📅 **Book Wellness Sessions**
+  - Session booking system to connect with professionals  
+  - Saves bookings in the backend  
 
-   Navigate to the project directory and open it in Visual Studio Code.
+- 🤖 **Chatbot Support**
+  - Interactive chatbot that provides helpful wellness responses  
+  - Offers motivation, reminders, and quick resource links  
 
-3. **Set up a local server using XAMPP:**
+- 🌐 **External Resources**
+  - Links to curated guides, tips, and articles for mental health  
 
-   - Install XAMPP on your machine.
-   - Move the cloned project folder into the `htdocs` directory of your XAMPP installation.
+- 🎨 **Frontend**
+  - HTML5, CSS3, and JavaScript  
+  - Responsive and mobile-friendly  
 
-4. **Access the website:**
+- ⚙️ **Backend**
+  - PHP application logic  
+  - PHPUnit tests for backend validation  
+  - Composer for dependency management  
+  - Docker + docker-compose for containerized deployment  
 
-   Start the Apache module in the XAMPP Control Panel. Open a web browser and visit [Mental Wellness](http://localhost/Mental-Wellness/PHP/Landing.php).
+---
 
-### Using Docker
+## 🛠️ Tech Stack
+- **Frontend:** HTML5, CSS3, JavaScript  
+- **Backend:** PHP 8+  
+- **Database:** MySQL (via Docker Compose)  
+- **Chatbot:** JavaScript/PHP chatbot interaction  
+- **Testing:** PHPUnit  
+- **Deployment:** Docker, Docker Compose, Composer  
 
-1. **Pull the Docker image:**
+---
 
-   Pull the Docker image from the repository:
-   ```bash
-   docker pull mohamedelfeky/mentalwellness
-   ```
+## 📂 Project Structure
+```bash
+mental-wellness/
+├── CSS/                     # Styles  
+├── HTML/                    # Web pages & templates  
+├── PHP/                     # Backend scripts (auth, mood, chatbot, booking)  
+├── Tests/                   # PHPUnit tests  
+│
+├── Dockerfile               # Docker config  
+├── docker-compose.yml       # Container setup  
+├── composer.json            # PHP dependencies  
+├── composer.lock  
+├── phpunit.xml              # PHPUnit config  
+└── README.md                # Documentation  
+```
 
-2. **Run the Docker container:**
+---
 
-   Set up and run the container:
-   ```bash
-   docker run -d -p 8080:80 mohamedelfeky/mentalwellness
-   ```
+## 🚀 Getting Started  
 
-3. **Access the website:**
+### 1. Clone the Repository  
+```bash
+git clone https://github.com/<your-username>/mental-wellness.git
+cd mental-wellness
+```
 
-   Open a web browser and go to [http://localhost:8080](http://localhost:8080).
+### 2. Run with Docker  
+```bash
+docker-compose up --build
+```
+Visit 👉 `http://localhost:8080`
 
-## Viewing the Deployed Website
+### 3. Run Locally (Without Docker)  
+```bash
+composer install
+php -S localhost:8080 -t HTML/
+```
 
-To view the deployed website, visit: [Mental Wellness Website](http://mentalwellness.thsite.top)
+---
 
-Project Link: [Git Repository](https://github.com/Beba03/Mental-Wellness)
+## 🧪 Running Tests
+```bash
+vendor/bin/phpunit
+```
 
-Special thanks to the free hosting services used: Tinker Host and FreeSQL Database.
+---
+
+## 🖥️ Demo  
+
+🌐 Live Demo: [mentalwellness.thsite.top](https://mentalwellness.thsite.top/)
+
+
+---
+
+## 👨‍💻 Author
+
+([@Beba03](https://github.com/Beba03)) 
